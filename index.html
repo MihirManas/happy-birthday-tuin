@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Surprise for Tuin! 💖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+            top: -20px;
+            z-index: 9999;
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #typing-title::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { color: transparent }
+            50% { color: #ec4899; }
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        /* New styles for landing page and transitions */
+        #landing-page {
+            transition: opacity 0.8s ease-in-out;
+        }
+        #main-content {
+           display: none;
+           opacity: 0;
+           transition: opacity 1s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .gift-animate {
+            animation: pulse 2s infinite;
+        }
+
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-purple-200 text-gray-800">
+
+    <!-- Landing Page with Gift -->
+    <div id="landing-page" class="flex flex-col justify-center items-center h-screen text-center p-4">
+        <h1 class="font-pacifico text-6xl md:text-8xl text-pink-500 drop-shadow-lg">Happy Birthday!</h1>
+        <p class="text-xl mt-4 text-purple-600">I've got a little surprise for you...</p>
+        <div id="gift-box" class="mt-12 cursor-pointer gift-animate">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-40 h-40 text-pink-500 drop-shadow-lg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 7.25A2.25 2.25 0 0017.75 5H6.25A2.25 2.25 0 004 7.25v2.25h16V7.25zM3 10.5v8.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V10.5H3zM12 5a2 2 0 012-2h.5a.5.5 0 000-1H14a3 3 0 00-3 3 .5.5 0 001 0h-1a1 1 0 01-1-1 .5.5 0 00-1 0 3 3 0 00-3 3h.5a.5.5 0 000-1H7a2 2 0 012-2 .5.5 0 001 0h1a1 1 0 011 1z"/>
+            </svg>
+        </div>
+        <p class="mt-4 text-lg text-purple-700 font-semibold">Click the gift to open!</p>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="main-content">
+        <div id="confetti-container"></div>
+        <main class="container mx-auto p-4 md:p-8 max-w-2xl">
+            <header class="text-center my-12 min-h-[100px]">
+                <h1 id="typing-title" class="font-pacifico text-5xl md:text-7xl text-pink-500 drop-shadow-lg"></h1>
+                <p class="text-xl mt-4 text-purple-600 scroll-animate">My amazing, one-of-a-kind best friend! 🎂</p>
+            </header>
+
+            <section class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 my-8 text-center scroll-animate">
+                <img src="*/tuin.jpg" 
+                     alt="A photo of Tuin" 
+                     class="w-32 h-32 rounded-full mx-auto -mt-20 border-4 border-white shadow-lg"
+                     onerror="this.onerror=null;this.src='https://placehold.co/150x150/f472b6/ffffff?text=Bestie';">
+                <h2 class="font-pacifico text-3xl text-purple-700 mt-4">To my dearest friend,</h2>
+                <p class="mt-4 text-lg leading-relaxed">
+                    In this big wide world, finding a friend like you is the best thing that's ever happened to me. You've been my rock, my sunshine, and my partner-in-crime through everything. When I was going through a tough time with Anita, you were the one who stood by me, reminded me of my strength, and made me laugh when I thought I couldn't. Your support means more than words can say.
+                </p>
+            </section>
+
+            <section class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 my-8 scroll-animate">
+                <h2 class="font-pacifico text-3xl text-center text-pink-600 mb-6">A little something I wrote...</h2>
+                <div class="text-center italic text-gray-700 space-y-4 text-md md:text-lg">
+                    <p>"In this big wide world, so bright and new,<br>I found my forever friend - that's you, Tuin.<br>Through storms and sunshine, laughter and tears,<br>You've held me up through all my fears.</p>
+                    <p>When my heart was heavy, my days all gray,<br>You showed me light, you showed the way.<br>Even when Anita's chapter brought me pain,<br>You stood beside me - sunshine in the rain.</p>
+                    <p>You're tiny in height (like a pocket-sized star),<br>But your heart's so big it can outshine Mars.<br>I still say, if we lined up in a crowd one day,<br>I might lose you if the wind blows you away. 😊</p>
+                    <p>We've shared our secrets, our snacks, our fun,<br>Pulled silly faces and teased each one.<br>Best friends like us are rare to see,<br>A forever team - just you and me.</p>
+                    <p>So here's my promise, without a bend,<br>I want you as my forever best friend.<br>Through all of life's twists, we'll face them together,<br>Tuin, will you be my bestie... forever and ever? ❣️"</p>
+                </div>
+            </section>
+
+            <section class="text-center my-12 scroll-animate">
+                <div id="proposal-section">
+                    <h2 class="text-4xl font-bold text-purple-800">So... what do you say?</h2>
+                    <p class="text-lg mt-2 mb-6">Be my best friend forever?</p>
+                    <div class="flex justify-center items-center gap-4 relative h-24">
+                        <button id="yes-button" class="bg-pink-500 text-white font-bold py-4 px-10 rounded-full text-2xl shadow-lg hover:bg-pink-600 transform hover:scale-110 transition-transform duration-300">
+                            YES! 💖
+                        </button>
+                        <button id="no-button" class="bg-gray-400 text-white font-bold py-2 px-6 rounded-full text-lg shadow-lg hover:bg-gray-500 transition-all duration-300 absolute">
+                            No
+                        </button>
+                    </div>
+                </div>
+                <div id="response-section" class="hidden">
+                     <h2 class="font-pacifico text-5xl text-pink-500 drop-shadow-lg">Yay! Forever it is! 🎉</h2>
+                     <p class="text-xl mt-4 text-purple-600">Couldn't imagine it any other way!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const landingPage = document.getElementById('landing-page');
+            const giftBox = document.getElementById('gift-box');
+            const mainContent = document.getElementById('main-content');
+
+            giftBox.addEventListener('click', () => {
+                // Fade out landing page
+                landingPage.style.opacity = '0';
+                
+                setTimeout(() => {
+                    landingPage.style.display = 'none';
+                    
+                    // Fade in main content
+                    mainContent.style.display = 'block';
+                    setTimeout(() => {
+                        mainContent.style.opacity = '1';
+                        // Start animations for the main page now
+                        initializeMainContent();
+                    }, 100); // short delay to ensure display:block is registered
+                }, 800); // Match this with the CSS transition duration
+            });
+
+
+            function initializeMainContent() {
+                const confettiContainer = document.getElementById('confetti-container');
+                const yesButton = document.getElementById('yes-button');
+                const noButton = document.getElementById('no-button');
+                const proposalSection = document.getElementById('proposal-section');
+                const responseSection = document.getElementById('response-section');
+                const typingTitle = document.getElementById('typing-title');
+
+                // --- Typing Effect ---
+                const titleText = "Happy Birthday, Tuin!";
+                let i = 0;
+                function typeWriter() {
+                    if (i < titleText.length) {
+                        typingTitle.innerHTML += titleText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 150);
+                    } else {
+                        typingTitle.style.borderRight = 'none';
+                        typingTitle.classList.remove('typing');
+                    }
+                }
+                typeWriter();
+
+                // --- Scroll Animation ---
+                const scrollElements = document.querySelectorAll('.scroll-animate');
+                const elementInView = (el, dividend = 1) => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+                };
+                const displayScrollElement = (element) => element.classList.add('visible');
+                const handleScrollAnimation = () => {
+                    scrollElements.forEach((el) => {
+                        if (elementInView(el, 1.25)) displayScrollElement(el);
+                    });
+                };
+                window.addEventListener('scroll', handleScrollAnimation);
+                handleScrollAnimation();
+
+                // --- Confetti Effect ---
+                const confettiCount = 100;
+                const colors = ['#f472b6', '#ec4899', '#d946ef', '#a855f7', '#8b5cf6'];
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = (Math.random() * 3) + 2 + 's';
+                    confetti.style.animationDelay = Math.random() * 5 + 's';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    const horizontalMove = (Math.random() - 0.5) * 200;
+                    confetti.style.setProperty('--horizontal-move', `${horizontalMove}px`);
+                    confettiContainer.appendChild(confetti);
+                }
+                const styleSheet = document.createElement("style");
+                styleSheet.innerText = `@keyframes fall { to { transform: translateY(100vh) translateX(var(--horizontal-move, 0)) rotate(720deg); } }`;
+                document.head.appendChild(styleSheet);
+
+                // --- Button Click Handlers ---
+                yesButton.addEventListener('click', () => {
+                    proposalSection.classList.add('hidden');
+                    responseSection.classList.remove('hidden');
+                    for (let i = 0; i < 50; i++) {
+                        const confetti = document.createElement('div');
+                        confetti.classList.add('confetti');
+                        confetti.style.left = Math.random() * 100 + 'vw';
+                        confetti.style.animationDuration = (Math.random() * 2) + 1 + 's';
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        const horizontalMove = (Math.random() - 0.5) * 300;
+                        confetti.style.setProperty('--horizontal-move', `${horizontalMove}px`);
+                        confettiContainer.appendChild(confetti);
+                    }
+                });
+
+                noButton.addEventListener('mouseover', () => {
+                    const container = proposalSection.querySelector('.relative');
+                    const containerRect = container.getBoundingClientRect();
+                    const buttonRect = noButton.getBoundingClientRect();
+                    const newTop = Math.random() * (containerRect.height - buttonRect.height);
+                    const newLeft = Math.random() * (containerRect.width - buttonRect.width);
+                    noButton.style.top = `${newTop}px`;
+                    noButton.style.left = `${newLeft}px`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
